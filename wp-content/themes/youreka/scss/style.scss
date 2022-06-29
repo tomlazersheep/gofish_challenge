@@ -1,0 +1,34 @@
+/*!
+Theme Name: Yeureka
+Theme URI: https://tomaslovera.com.ar
+Author: Tom
+Author URI: https://tomaslovera.com.ar
+Description: Custom WordPress theme created by Tom.
+Version:      1.0.0
+*/
+
+// Includes
+@import './includes/vars';
+@import './includes/fonts';
+@import './includes/extends';
+
+// Libs
+@import './libs/reset';
+@import './libs/wp-core';
+// @import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+// Global
+@import './global/buttons';
+@import './global/forms';
+@import './global/typography';
+@import './global/structure';
+@import './global/header';
+@import './global/footer';
+@import './global/variables';
+@import './global/mixins';
+
+// Partials
+//@import 'css/partials/hero';
+
+// Pages
+//@import 'css/pages/home';
