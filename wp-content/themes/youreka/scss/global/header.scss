@@ -137,6 +137,12 @@
   &.mobile {
     margin-top: 5px;
     margin-bottom: 5px;
+    @media #{$tablet} {
+      display: none;
+    }
+    @media #{$phone} {
+      display: block;
+    }
   }
 }
 
@@ -149,6 +155,12 @@
   margin-left: 5px;
   &.mobile {
     margin-left: 0;
+    @media #{$tablet} {
+      display: none;
+    }
+    @media #{$phone} {
+      display: block;
+    }
   }
 }
 
