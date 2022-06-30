@@ -39,3 +39,14 @@
     color: $white;
   }
 }
+
+.btn-wide {
+  padding: 15px 50px;
+}
+
+.btn-shadow {
+  box-shadow: 10px 10px 0px 1px $blue;
+  &:hover, &:focus {
+    box-shadow: 10px 10px 0px 1px $white;
+  }
+}

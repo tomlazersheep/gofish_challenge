@@ -1,0 +1,114 @@
+.hero {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  min-height: 720px;
+}
+
+.hero__image-background {
+  background-image: url('./images/hero.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  bottom: 0;
+}
+
+.hero__content {
+  padding-right: calc(50% + $site-gutter);
+  height: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.hero__content-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.hero__pattern-background {
+  background-image: url('./images/grid.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-color: $light-blue;
+  width: 100%;
+}
+
+.hero__cta-container {
+  margin-top: 20px;
+
+}
+
+.hero__phone {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.hero__phone-link {
+  color: $blue;
+  font-weight: bold;
+}
+
+.hero__steps-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero__circle {
+  background-color: $white;
+  border-radius: 50%;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  background: rgb(150, 150, 150);
+  position: relative;
+  margin-left: 30px;
+}
+
+.hero__arrow {
+  position: absolute;
+  top: -45px;
+  left: -55px;
+
+}
+
+.hero__step {
+  color: $green;
+  font-family: $caveat;
+  font-size: 22px;
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero__step-number {
+  color: $green;
+  font-family: $caveat;
+  font-size: 50px;
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  transform: translateX(calc(-50% - 7px));
+}
+
+.hero__step-text {
+  letter-spacing: 0.3px;
+  width: 70%;
+}
+
+.hero__step-link {
+  color: $green;
+  font-family: $rubik;
+  font-weight: bold;
+}

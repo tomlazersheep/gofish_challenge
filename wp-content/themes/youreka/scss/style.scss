@@ -19,4 +19,7 @@ Version:      1.0.0
 @import './global/structure';
 @import './global/header';
 @import './global/footer';
+@import './global/typography';
 
+// Partials
+@import './partials/homepage.scss';
