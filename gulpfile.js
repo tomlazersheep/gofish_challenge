@@ -36,6 +36,7 @@ let terser = require("gulp-terser");
 let notify = require("gulp-notify");
 let concat = require("gulp-concat");
 let sourcemaps = require("gulp-sourcemaps");
+let order = require("gulp-order");
 
 // sass.compiler = require("sass");
 
@@ -65,6 +66,7 @@ const jsOutput = "./wp-content/themes/youreka/";
 gulp.task("scripts", () => {
   return gulp
     .src(jsSrc)
+    .pipe(order(["libs/**/*.js", "/development/**/*.js"]))
     .pipe(concat("js.js"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(terser())

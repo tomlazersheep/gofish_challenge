@@ -1,0 +1,90 @@
+.header {
+  background-color: $white;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 15px 0;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo__wrapper {
+  margin-right: 10px;
+}
+
+.logo__link {
+  transform: scale(1);
+  transition: transform .4s ease-in-out;
+  display: block;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.primaryNav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primaryNav__toggler {
+  display: none;
+  @media #{$tablet} {
+    display: inline-block;
+  }
+}
+
+.primaryNav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 30px;
+
+  .menu-item {
+    a {
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s linear;
+      text-decoration: none;
+      color: $blue;
+      font-family: $rubik;
+      font-weight: normal;
+      letter-spacing: 0.6px;
+      display: block;
+      &:hover {
+        border-color: $blue;
+      }
+    }
+
+  }
+
+}
+
+.header__login {
+  text-decoration: none;
+  vertical-align: bottom;
+  position: relative;
+  padding-left: 40px;
+  svg {
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    color: $blue;
+    transition: color 0.3s ease;
+  } 
+  &:hover svg {
+    color: $white;
+  }
+}
+
+.header__login-text {
+  font-family: $rubik;
+  font-weight: normal;
+}
+
+.header__contact-button {
+  margin-left: 5px;
+}
