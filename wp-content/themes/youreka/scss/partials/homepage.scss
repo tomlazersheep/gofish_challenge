@@ -1,3 +1,7 @@
+.page__home {
+  margin-top: 102px;
+}
+
 .hero {
   width: 100%;
   position: relative;
@@ -10,19 +14,25 @@
 }
 
 .hero__image-background {
-  background-image: url('./images/hero.png');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  
   position: absolute;
   top: 0;
   right: 0;
   width: 50%;
   bottom: 0;
+  overflow: hidden;
 
   @media #{$tablet} {
     width: 100%;
   }
+}
+
+.hero__image-background-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .hero__content {
@@ -64,20 +74,20 @@
   @media #{$tablet} {
     margin-bottom: 60px;
   }
-}
+  p {
 
-.hero__phone {
-  display: inline-block;
-  margin-left: 30px;
-
-  @media #{$tablet} {
-    margin-top: 20px;
+    display: inline-block;
+    margin-left: 30px;
+    
+    @media #{$tablet} {
+      margin-top: 20px;
+    }
+    a {
+      color: $blue;
+      font-weight: bold;
+    
+    }
   }
-}
-
-.hero__phone-link {
-  color: $blue;
-  font-weight: bold;
 }
 
 .hero__steps-container {
@@ -92,6 +102,19 @@
   @media #{$tablet} {
     flex-direction: column;
     gap: 20px;
+  }
+  p {
+    letter-spacing: 0.3px;
+    width: 70%;
+    @media #{$tablet} {
+      width: 100%;
+      text-align: center;
+    }
+    a {
+      color: $green;
+      font-family: $rubik;
+      font-weight: bold;
+    }
   }
 }
 
@@ -134,19 +157,4 @@
   top: 23px;
   left: 50%;
   transform: translateX(calc(-50% - 7px));
-}
-
-.hero__step-text {
-  letter-spacing: 0.3px;
-  width: 70%;
-  @media #{$tablet} {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.hero__step-link {
-  color: $green;
-  font-family: $rubik;
-  font-weight: bold;
 }

@@ -5,11 +5,11 @@
     <div class="hero__pattern-background">
       <div class="hero__content container">
         <div class="hero__content-wrapper">
-          <h1>Lorem Ipsum Dolor Sit Amet.</h1>
-          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed nisl metus.</h2>
+          <h1><?php the_field('main_title'); ?></h1>
+          <h2><?php the_field('sub_title'); ?></h2>
           <div class="hero__cta-container">
-            <a type="button" class="btn btn-primary btn-wide btn-shadow hero__cta" href="/get-quote" >Get a Quote</a>
-            <p class="hero__phone">or call us <a class="hero__phone-link" href="tel:8339387352">833.938.7352</a></p>
+            <a type="button" class="btn btn-primary btn-wide btn-shadow hero__cta" href="<?php the_field('main_button_link'); ?>" ><?php the_field('main_button_text'); ?></a>
+            <?php the_field('secondary_cta_text'); ?>
           </div>
         
           <div class="hero__steps-container">
@@ -18,17 +18,14 @@
               <div class="hero__step">STEP</div>  
               <div class="hero__step-number">1</div>  
             </div>
-            <p class="hero__step-text">See our step-by-step process for 
-              <a href="/windows" class="hero__step-link">Windows</a>,
-              <a href="/siding" class="hero__step-link">Siding</a>,
-              <a href="/roofing" class="hero__step-link">Roofing</a>, &
-              <a href="/doors" class="hero__step-link">Doors</a>,
-            </p>
+            <?php the_field('steps_text'); ?>
           </div>
         </div>
       </div>
     </div>
-    <div class="hero__image-background"></div>
+    <div class="hero__image-background">
+      <img class="hero__image-background-img" src="<?php the_field('hero_image') ?>" alt="">
+    </div>
   </section>
 </main>
 <?php get_footer(); ?>
