@@ -11,6 +11,23 @@
     </head>
     <body <?php body_class(); ?>>
         <header class="header">
+          <div id="primaryNav__mobile" class="primaryNav__mobile">
+            <?php
+              $primaryNav = array(
+                'menu'            => 'Primary Navigation',
+                  'theme_location'  => 'main_nav',
+                  'menu_class'      => 'primaryNav__list mobile',
+                  'container'       => false,
+                  // 'walker' => new Mobile_Walker()
+                );
+              wp_nav_menu( $primaryNav );
+            ?>
+            <a type="button" class="header__login btn btn-secondary mobile" href="<?php echo is_user_logged_in() ? wp_logout_url(get_permalink()) : wp_login_url(get_permalink()); ?>">
+              <?php echo file_get_contents(get_template_directory_uri(). "/images/user.svg")?>
+              <span class="header__login-text"><?php echo is_user_logged_in() ? 'Logout' : 'Login' ?>
+            </a>
+            <a type="button" class="btn btn-primary header__contact-button mobile" href="/contact">Contact Us</a>
+          </div>
           <div class="container">
             <div class="header__wrapper">
               <div class="logo__wrapper">
@@ -31,16 +48,19 @@
                   wp_nav_menu( $primaryNav );
                   ?>
               </nav>
-              <div>
-                <button type="button" id="nav__toggler" class="primaryNav__toggler btn">
-                  sdafasdfasdf
-                </button>
+              <div class="header__buttons">
                 <a type="button" class="header__login btn btn-secondary" href="<?php echo is_user_logged_in() ? wp_logout_url(get_permalink()) : wp_login_url(get_permalink()); ?>">
                   <?php echo file_get_contents(get_template_directory_uri(). "/images/user.svg")?>
                   <span class="header__login-text"><?php echo is_user_logged_in() ? 'Logout' : 'Login' ?>
                 </a>
                 <a type="button" class="btn btn-primary header__contact-button" href="/contact">Contact Us</a>
               </div>
+              <button type="button" id="primaryNav__toggler" class="primaryNav__toggler" >
+                <span class="primaryNav__toggler-bar bar-1"></span>
+                <span class="primaryNav__toggler-bar bar-2"></span>
+                <span class="primaryNav__toggler-bar bar-3"></span>
+              </button>
+              
             </div>
           </div>
         </header>

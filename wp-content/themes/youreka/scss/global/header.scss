@@ -1,5 +1,9 @@
 .header {
   background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header__wrapper {
@@ -25,25 +29,66 @@
   }
 }
 
-.primaryNav__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .primaryNav__toggler {
   display: none;
   @media #{$tablet} {
     display: inline-block;
+    outline: none;
+    height: 30px;
+    width: 40px;
+    position: relative;
+    &.active {
+      .primaryNav__toggler-bar {
+        &.bar-1 {
+          opacity: 0;
+        }
+        &.bar-2 {
+          transform: translateY(-1px) rotate(45deg);
+        }
+        &.bar-3 {
+          transform: translateY(-16px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+}
+
+.primaryNav__toggler-bar {
+  display: block;
+  height: 3px;
+  width: 40px;
+  background-color: $blue;
+  position: absolute;
+  transition: transform .3s ease;
+  &.bar-1 {
+    top: 0;
+    opacity: 1;
+    transition: opacity .3s ease;
+  }
+  &.bar-2 {
+    top: 50%;
+    transform: translateY(0%) rotate(0deg);
+  }
+  &.bar-3 {
+    top: 100%;
+    transform: translateY(0%) rotate(0deg);
   }
 }
 
 .primaryNav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   gap: 30px;
-
+  
+  @media #{$tablet} {
+    display: none;
+  }
+  
   .menu-item {
     a {
       border-bottom: 1px solid transparent;
@@ -57,10 +102,21 @@
       &:hover {
         border-color: $blue;
       }
-    }
-
+    } 
   }
 
+  &.mobile {
+    @media #{$tablet} {
+      display: block;
+
+      .menu-item {
+        padding: 5px 0;
+        a {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 .header__login {
@@ -78,6 +134,10 @@
   &:hover svg {
     color: $white;
   }
+  &.mobile {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 
 .header__login-text {
@@ -87,4 +147,45 @@
 
 .header__contact-button {
   margin-left: 5px;
+  &.mobile {
+    margin-left: 0;
+  }
+}
+
+.header__buttons{
+  @media #{$tablet} {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+  @media #{$phone} {
+    display: none;
+  } 
+}
+
+.primaryNav__mobile {
+  background-color: $white;
+  width: 100vw;
+  height: auto;
+  top: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  transform: translateX(calc(100%));
+  transition: transform .3s ease;
+  padding: 25px;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: scroll;
+
+  &.active {
+    transform: translateX(0);
+  }
+  @media #{$tablet} {
+    display: flex;
+  }
 }
