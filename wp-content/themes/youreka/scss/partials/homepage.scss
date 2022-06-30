@@ -4,6 +4,9 @@
   display: flex;
   align-items: stretch;
   min-height: 720px;
+  @media #{$tablet} {
+    min-height: fit-content;
+  }
 }
 
 .hero__image-background {
@@ -16,6 +19,10 @@
   right: 0;
   width: 50%;
   bottom: 0;
+
+  @media #{$tablet} {
+    width: 100%;
+  }
 }
 
 .hero__content {
@@ -23,29 +30,49 @@
   height: 100%;
   padding-top: 150px;
   padding-bottom: 150px;
+  @media #{$tablet} {
+    padding-right: $site-gutter;
+    padding-top: 50px;
+    padding-bottom: 250px;
+  }
 }
 
 .hero__content-wrapper {
   position: relative;
   height: 100%;
+  @media #{$tablet} {
+    z-index: 2;
+  }
 }
 
 .hero__pattern-background {
   background-image: url('./images/grid.png');
   background-repeat: repeat;
   background-size: auto;
-  background-color: $light-blue;
+  background-color: $light-blue; // not visible due to grid image not having transparency
   width: 100%;
+
+  @media #{$tablet} {
+    background-color: rgba($color: $light-blue, $alpha: 0.9);
+    background-image: none; // could be same if it were transparent
+    z-index: 1;
+  }
 }
 
 .hero__cta-container {
   margin-top: 20px;
-
+  @media #{$tablet} {
+    margin-bottom: 60px;
+  }
 }
 
 .hero__phone {
   display: inline-block;
   margin-left: 30px;
+
+  @media #{$tablet} {
+    margin-top: 20px;
+  }
 }
 
 .hero__phone-link {
@@ -62,6 +89,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media #{$tablet} {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .hero__circle {
@@ -70,9 +101,12 @@
   display: inline-block;
   width: 90px;
   height: 90px;
-  background: rgb(150, 150, 150);
   position: relative;
   margin-left: 30px;
+  @media #{$tablet} {
+    margin-left: 0;
+
+  }
 }
 
 .hero__arrow {
@@ -105,6 +139,10 @@
 .hero__step-text {
   letter-spacing: 0.3px;
   width: 70%;
+  @media #{$tablet} {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .hero__step-link {

@@ -4,6 +4,10 @@ h1 {
   color: $blue;
   font-size: 55px;
   letter-spacing: 1px;
+  @media #{$tablet} {
+    font-size: 35px;
+    
+  }
 }
 
 h2 {
